@@ -156,6 +156,23 @@ Note that webhook forwarding and the development server must be running concurre
 
 Finally, navigate to [http://localhost:3000](http://localhost:3000) in your browser to see the application rendered.
 
+
+### Product seeding on local development
+
+```bash
+stripe fixtures fixtures/stripe-fixtures.json
+
+# if modifying the fixtures file, you can reset the database with
+npx supabase db reset
+```
+
+### Run the Inbucket email server
+
+access the Inbucket web interface at
+
+http://localhost:54324/
+
+
 ## Going live
 
 ### Archive testing products

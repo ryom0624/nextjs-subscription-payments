@@ -80,6 +80,45 @@
                     "interval_count": 1
                 }
             }
+        },
+        {
+            "name": "prod_professional",
+            "path": "/v1/products",
+            "method": "post",
+            "params": {
+                "name": "Professional",
+                "description": "Professional product description"
+            }
+        },
+        {
+            "name": "price_professional_month",
+            "path": "/v1/prices",
+            "method": "post",
+            "params": {
+                "product": "${prod_professional:id}",
+                "currency": "usd",
+                "billing_scheme": "per_unit",
+                "unit_amount": 5000,
+                "recurring": {
+                    "interval": "month",
+                    "interval_count": 1
+                }
+            }
+        },
+        {
+            "name": "price_professional_year",
+            "path": "/v1/prices",
+            "method": "post",
+            "params": {
+                "product": "${prod_professional:id}",
+                "currency": "usd",
+                "billing_scheme": "per_unit",
+                "unit_amount": 50000,
+                "recurring": {
+                    "interval": "year",
+                    "interval_count": 1
+                }
+            }
         }
     ]
 }
